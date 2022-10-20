@@ -1,0 +1,119 @@
+@import '../../../styles/settings.scss';
+
+.hero {
+  margin-top: 10vh;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+
+
+  // Name and role
+
+  .introduction {
+    position: relative;
+    overflow: hidden;
+
+    .name {
+      font-size: 130px;
+    }
+
+    .role {
+      font-size: 45px;
+      margin: 15px 0 0 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: appear_slide 1.3s;
+    }
+  }
+
+  // Button and short description
+  .info {
+    padding-top: 10%;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+      animation: appear_fade 1s;
+      visibility: hidden;
+      animation-fill-mode: forwards;
+      animation-delay: 1s;
+    }
+
+    .about {
+      max-width: 400px;
+      margin-right: 30px;
+
+      .text {
+        margin-bottom: 20px;
+        overflow: hidden;
+
+        .about_me {
+          font-size: 24px;
+          margin: 0;
+          animation: appear_slide 1.8s;
+        }
+      }
+
+      .links {
+        display: flex;
+        font-size: 16px;
+        gap: 20px;
+
+        p {
+          margin: 0;
+          animation: appear_fade 1.3s;
+          visibility: hidden;
+          animation-fill-mode: forwards;
+        }
+
+        @for $i from 1 through 3 {
+          p:nth-child(#{$i}) {
+            animation-delay: $i * 0.2s;
+          }
+        }
+      }
+    }
+  }
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+  background: $color-dark;
+  transform-origin: 0% 100%;
+  animation: bar_expand 2s;
+}
+
+@keyframes bar_expand {
+  0%, 15% {
+    transform: scale(0,1);
+  }
+  100% {
+    transform: scale(1,1);
+  }
+}
+
+@keyframes appear_slide {
+  0%, 30% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes appear_fade {
+  0%, 50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
