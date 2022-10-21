@@ -1,0 +1,55 @@
+
+.project_container {
+  margin: 70px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+
+  .project_info {
+    flex: 3;
+
+    .title {
+      font-size: 70px;
+      font-weight: 500;
+      margin-left: -5px;
+    }
+
+    .technologies {
+      font-size: 22px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      font-weight: 400;
+    }
+
+    .description {
+      font-size: 16px;
+      font-weight: 200;
+    }
+
+
+  }
+
+  .project_visuals {
+    position: relative;
+    height: 400px;
+    flex: 5;
+    border: 5px solid black;
+    border-radius: 20px;
+    background: grey;
+  }
+
+  .project_visuals::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    width: 100%;
+    background: black;
+    height: 10px;
+    opacity: 0.6;
+    border-radius: 10px;
+    filter: blur(5px);
+    z-index: -1;
+
+  }
+}

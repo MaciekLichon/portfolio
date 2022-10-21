@@ -1,11 +1,14 @@
 import Container from './components/features/Container/Container';
-import Home from './components/pages/Home/Home';
+
+import Hero from './components/sections/Hero/Hero';
+import Projects from './components/sections/Projects/Projects';
 
 
 const App = () => {
   return (
     <Container>
-      <Home />
+      <Hero />
+      <Projects />
     </Container>
   );
 }

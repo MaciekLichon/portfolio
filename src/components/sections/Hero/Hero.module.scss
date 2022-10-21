@@ -1,4 +1,6 @@
 @import '../../../styles/settings.scss';
+@import '../../../styles/typography.scss';
+
 
 .hero {
   margin-top: 10vh;
@@ -17,14 +19,17 @@
 
     .name {
       font-size: 130px;
+      font-weight: $header-weight;
+      margin-left: -12px;
     }
 
     .role {
       font-size: 45px;
-      margin: 15px 0 0 10px;
+      margin-top: 15px;
       letter-spacing: 2px;
       text-transform: uppercase;
       animation: appear_slide 1.3s;
+      margin-left: -4px;
     }
   }
 
@@ -34,11 +39,24 @@
     display: flex;
     justify-content: space-between;
 
-    button {
-      animation: appear_fade 1s;
-      visibility: hidden;
-      animation-fill-mode: forwards;
-      animation-delay: 1s;
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 30px;
+
+      button {
+        flex: 1;
+        animation: appear_fade 1s;
+        visibility: hidden;
+        animation-fill-mode: forwards;
+      }
+
+      @for $i from 1 through 2 {
+        button:nth-child(#{$i}) {
+          animation-delay: 0.8 + $i * 0.2s;
+        }
+      }
     }
 
     .about {

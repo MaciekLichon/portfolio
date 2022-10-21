@@ -1,9 +1,12 @@
 @import './settings.scss';
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100...900');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900');
 
 $font-text: 'Raleway', sans-serif;
 
 $base-weight: 100;
+$header-weight: 300;
+$sub-header-weight: 200;
+
 $base-size: 12px;
 
 h1, h2, h3, h4, h5, h6 {
