@@ -5,8 +5,8 @@ const initialState = {
       title: 'Pathfinder',
       technologies: 'JavaScript',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      mainImage: '',
-      foregoundOne: '',
+      mainImage: '/images/project_backgrounds/pathfinder.png',
+      foregroundOne: '/images/icons/flag-gradient.png',
       foregroundTwo: '',
     },
     {
@@ -15,7 +15,7 @@ const initialState = {
       technologies: 'React',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       mainImage: '',
-      foregoundOne: '',
+      foregroundOne: '',
       foregroundTwo: '',
     },
     {
@@ -24,7 +24,7 @@ const initialState = {
       technologies: 'tbd',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
       mainImage: '',
-      foregoundOne: '',
+      foregroundOne: '',
       foregroundTwo: '',
     },
   ],

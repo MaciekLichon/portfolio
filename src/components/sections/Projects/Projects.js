@@ -2,6 +2,7 @@ import styles from './Projects.module.scss';
 import { useSelector } from 'react-redux';
 
 import { getAllProjects } from '../../../redux/projectsRedux';
+import Project from '../../features/Project/Project';
 
 const Projects = () => {
 
@@ -10,16 +11,15 @@ const Projects = () => {
   return (
     <section className={styles.projects}>
       {projects.map(project => (
-        <div key={project.id} className={styles.project_container}>
-          <div className={styles.project_info}>
-            <h3 className={styles.title}>{project.title}</h3>
-            <h4 className={styles.technologies}>{project.technologies}</h4>
-            <p className={styles.description}>{project.description}</p>
-            <a href="" className={styles.Open_button}>Open</a>
-          </div>
-          <div className={styles.project_visuals}>
-          </div>
-        </div>
+        <Project
+          key={project.id}
+          id={project.id}
+          title={project.title}
+          technologies={project.technologies}
+          description={project.description}
+          foregroundOne={project.foregroundOne}
+          mainImage={project.mainImage}
+        />
       ))}
     </section>
   );
