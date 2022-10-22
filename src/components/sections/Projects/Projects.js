@@ -10,7 +10,7 @@ const Projects = () => {
   return (
     <section className={styles.projects}>
       {projects.map(project => (
-        <div className={styles.project_container}>
+        <div key={project.id} className={styles.project_container}>
           <div className={styles.project_info}>
             <h3 className={styles.title}>{project.title}</h3>
             <h4 className={styles.technologies}>{project.technologies}</h4>

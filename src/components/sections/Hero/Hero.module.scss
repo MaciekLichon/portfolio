@@ -108,6 +108,63 @@
   animation: bar_expand 2s;
 }
 
+
+.scroll_container {
+  height: 15vh;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .scroll {
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    opacity: 0;
+    animation: show_scroll 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 3s;
+  }
+
+  .scroll::after {
+    position: absolute;
+    content: '';
+    background: $color-dark;
+    height: 100%;
+    width: 1px;
+    opacity: 0.5;
+    top: 0;
+    right: 15px;
+    transform-origin: bottom;
+    animation: underline_scroll 6s infinite ease-in-out;
+    animation-delay: 3s;
+  }
+}
+
+@keyframes show_scroll {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes underline_scroll {
+  0% {
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
+  }
+}
+
 @keyframes bar_expand {
   0%, 15% {
     transform: scale(0,1);
