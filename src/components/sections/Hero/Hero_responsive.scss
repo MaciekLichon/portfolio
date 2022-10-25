@@ -1,0 +1,103 @@
+@media (max-width: 1024px) {
+
+  .hero {
+
+    .introduction .name {
+      font-size: 120px;
+      margin-left: -2px;
+    }
+
+    .introduction .role {
+      font-size: 35px;
+      margin-left: 0px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  .hero {
+
+    .introduction .name {
+      font-size: 100px;
+      margin-left: -6px;
+    }
+
+    .introduction .role {
+      font-size: 35px;
+      margin-left: -1px;
+    }
+
+    .info {
+      flex-direction: column-reverse;
+      gap: 20px;
+
+      .about {
+        max-width: 550px;
+
+        .text .about_me {
+          font-size: 30px;
+        }
+
+        .links {
+          display: none;
+        }
+      }
+
+      .buttons {
+        display: block;
+        gap: 20px;
+
+        a {
+          height: 60px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 640px) {
+
+  .hero {
+
+    .introduction .name {
+      font-size: 90px;
+      margin-left: -2px;
+    }
+
+    .introduction .role {
+      font-size: 30px;
+      margin-left: 0px;
+    }
+
+    .info .about .text .about_me {
+      font-size: 25px;
+    }
+  }
+}
+
+
+@media (max-width: 425px) {
+
+  .hero {
+
+    .introduction .name {
+      font-size: 60px;
+      margin-left: -2px;
+    }
+
+    .introduction .role {
+      font-size: 18px;
+      margin-left: 0px;
+    }
+
+    .info .about .text .about_me {
+      font-size: 20px;
+    }
+
+    .info .buttons a {
+      height: 50px;
+    }
+  }
+}
