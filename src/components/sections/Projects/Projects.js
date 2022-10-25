@@ -19,6 +19,7 @@ const Projects = () => {
           description={project.description}
           foregroundOne={project.foregroundOne}
           mainImage={project.mainImage}
+          gitLink={project.gitLink}
         />
       ))}
     </section>

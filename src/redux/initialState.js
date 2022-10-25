@@ -8,6 +8,7 @@ const initialState = {
       mainImage: '/images/project_backgrounds/pathfinder.png',
       foregroundOne: '/images/icons/flag-gradient.png',
       foregroundTwo: '',
+      gitLink: 'https://github.com/MaciekLichon/Pathfinder',
     },
     {
       id: '2',

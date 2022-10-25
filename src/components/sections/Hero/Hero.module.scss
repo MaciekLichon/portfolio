@@ -45,7 +45,7 @@
       justify-content: space-between;
       gap: 30px;
 
-      button {
+      a {
         flex: 1;
         animation: appear_fade 1s;
         visibility: hidden;
@@ -53,7 +53,7 @@
       }
 
       @for $i from 1 through 2 {
-        button:nth-child(#{$i}) {
+        a:nth-child(#{$i}) {
           animation-delay: 0.8 + $i * 0.2s;
         }
       }
@@ -79,17 +79,37 @@
         font-size: 16px;
         gap: 20px;
 
-        p {
+        a {
+          text-decoration: none;
+          color: $color-dark;
           margin: 0;
           animation: appear_fade 1.3s;
           visibility: hidden;
           animation-fill-mode: forwards;
+          position: relative;
         }
 
-        @for $i from 1 through 3 {
-          p:nth-child(#{$i}) {
-            animation-delay: $i * 0.2s;
+        @for $i from 1 through 2 {
+          a:nth-child(#{$i}) {
+            animation-delay: $i * 0.3s;
           }
+        }
+
+        a::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 1px;
+          width: 100%;
+          background: $color-dark;
+          transform-origin: left;
+          transform: scale(0,1);
+          transition: 0.3s all;
+        }
+
+        a:hover::after {
+          transform: scale(1,1);
         }
       }
     }

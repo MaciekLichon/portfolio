@@ -2,9 +2,9 @@ import styles from './Button.module.scss';
 
 const Button = props => {
   return (
-    <button className={styles.button}>
+    <a className={styles.button} href={props.url}>
       {props.children}
-    </button>
+    </a>
   );
 };
 

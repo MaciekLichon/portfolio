@@ -47,7 +47,18 @@ const Project = props => {
         <div><h3 className={styles.title}>{props.title}</h3></div>
         <div><h4 className={styles.technologies}>{props.technologies}</h4></div>
         <div><p className={styles.description}>{props.description}</p></div>
-        <a href="" className={styles.open_button}>Open</a>
+        <div>
+          <div className={styles.actions}>
+            <div className={styles.action}>
+              <span className={styles.arrow}></span>
+              <a href="" className={styles.action_button}>Try it out</a>
+            </div>
+            <div className={styles.action}>
+              <span className={styles.arrow}></span>
+              <a href={props.gitLink} target="_blank" className={styles.action_button}>Access code</a>
+            </div>
+          </div>
+        </div>
       </div>
       <div className={styles.project_visuals}>
         <div className={styles.visuals_container}>
