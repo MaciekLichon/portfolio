@@ -1,3 +1,39 @@
+@media (max-width: 1024px) {
+
+  footer {
+
+    .message_container {
+      padding: 60px 0;
+
+      .footer_message {
+        font-size: 65px;
+      }
+    }
+
+    .media {
+      padding: 40px 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+
+  footer {
+
+    .message_container {
+      padding: 50px 0;
+
+      .footer_message {
+        font-size: 60px;
+      }
+    }
+
+    .media {
+      padding-top: 30px 20px;
+    }
+  }
+}
+
 @media (max-width: 425px) {
 
   .media {

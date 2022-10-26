@@ -1,3 +1,36 @@
+@media (min-height: 1080px) {
+
+  .hero .info {
+    padding-top: 10%;
+  }
+}
+
+
+@media (max-height: 768px) {
+
+  .hero .info {
+    padding-top: 3%;
+  }
+}
+
+
+@media (max-width: 1440px) {
+
+  .hero {
+
+    .introduction .name {
+      font-size: 110px;
+      margin-left: -2px;
+    }
+
+    .introduction .role {
+      font-size: 40px;
+      margin-left: 0px;
+    }
+  }
+}
+
+
 @media (max-width: 1024px) {
 
   .hero {
@@ -98,6 +131,24 @@
 
     .info .buttons a {
       height: 50px;
+    }
+  }
+}
+
+@media (max-width: 425px) and (max-height: 700px) {
+
+  .hero {
+
+    .introduction .name {
+      font-size: 50px;
+    }
+
+    .introduction .role {
+      font-size: 18px;
+    }
+
+    .info .about .text .about_me {
+      font-size: 20px;
     }
   }
 }
