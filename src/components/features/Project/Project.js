@@ -51,7 +51,7 @@ const Project = props => {
           <div className={styles.actions}>
             <div className={styles.action}>
               <span className={styles.arrow}></span>
-              <a href="" className={styles.action_button}>Try it out</a>
+              <a href={props.appLink} target="_blank" className={styles.action_button}>Try it out</a>
             </div>
             <div className={styles.action}>
               <span className={styles.arrow}></span>
@@ -63,10 +63,12 @@ const Project = props => {
       <div className={styles.project_visuals}>
         <div className={styles.visuals_container}>
           <div className={styles.project_preview}>
-            <img
-              alt={props.title}
-              src={`${process.env.PUBLIC_URL}${props.mainImage}`}
-            />
+            <a href={props.appLink} target="_blank">
+              <img
+                alt={props.title}
+                src={`${process.env.PUBLIC_URL}${props.mainImage}`}
+              />
+            </a>
           </div>
           <div className={styles.foreground}>
             <img

@@ -19,7 +19,7 @@ const Footer = () => {
           <a href="https://www.linkedin.com/in/maciej-lichon/" target="_blank">LinkedIn</a>
           <a href="https://github.com/MaciekLichon" target="_blank">GitHub</a>
           <a href="mailto:maciek.lichon@gmail.com">Email</a>
-          <a href="">Resume</a>
+          <a href={`${process.env.PUBLIC_URL}/resume/MaciejLichonCV.pdf`} target="_blank">Resume</a>
         </div>
       </Container>
     </footer>
