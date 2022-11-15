@@ -5,40 +5,30 @@ import { useRef, useEffect, useState } from 'react';
 
 const Project = props => {
 
-  const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef(null);
-
-  const callbackFunc = (entries) => {
-    const entry = entries[0];
-    setIsVisible(entry.isIntersecting);
-  }
+  const [isVisible, setIsVisible] = useState(); // value set based on intersecting status, used to toggle the 'show' class
+  const elementRef = useRef(); // creates referecence to a given HTML element
 
   const options = {
     threshold: 1
   }
 
   useEffect(() => {
-
-    const observer = new IntersectionObserver(entries => {
+    // create the observer with custom options
+    const observer = new IntersectionObserver((entries) => {
+      // there's going to be one element targetted so index of 0 can be used safely
       const entry = entries[0];
       setIsVisible(entry.isIntersecting);
 
+      // observe until it appears only. As a result, the animation is going to run once (on show) and not repeat later
       if (entry.isIntersecting) {
-        observer.unobserve(elementRef.current);
+        observer.unobserve(entry.target);
       }
     }, options);
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
-    }
+    // tell the observer what to observe
+    observer.observe(elementRef.current);
+  }, []);
 
-    return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
-      }
-    }
-
-  }, [elementRef]);
 
 
   return (
