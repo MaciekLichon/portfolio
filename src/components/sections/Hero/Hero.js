@@ -4,10 +4,10 @@ import Button from '../../features/Button/Button';
 
 const Hero = () => {
   return (
-    <>
+    <div className={styles.home}>
       <section className={styles.hero}>
         <div className={styles.introduction}>
-          <h1 className={styles.name}>Hi,<br/>I am Maciek.</h1>
+          <h1 className={styles.name}>Hi,<span>I am Maciek.</span></h1>
           <h2 className={styles.role}>Front-end developer</h2>
         </div>
         <div className={styles.info}>
@@ -29,7 +29,7 @@ const Hero = () => {
       <div className={styles.scroll_container}>
         <p className={styles.scroll}>Scroll</p>
       </div>
-    </>
+    </div>
   );
 };
 

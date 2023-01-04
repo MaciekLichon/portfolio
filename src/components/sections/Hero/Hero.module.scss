@@ -1,164 +1,169 @@
 @import '../../../styles/settings.scss';
 @import '../../../styles/typography.scss';
 
-.hero {
-  margin-top: 10vh;
-  height: 75vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  justify-content: center;
+// 600 x 360px - smallest viewport
 
-  // Name and role
+.home {
+  height: 100vh;
 
-  .introduction {
+  /* ------------ HERO ------------ */
+
+  .hero {
+    height: 85vh;
+    padding-top: 10vh; 
     position: relative;
-    overflow: hidden;
-
-    .name {
-      font-size: 130px;
-      font-weight: $header-weight;
-      margin-left: -12px;
-    }
-
-    .role {
-      font-size: 45px;
-      margin-top: 15px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      animation: appear_slide 1.3s;
-      margin-left: -4px;
-    }
-  }
-
-  // Button and short description
-  .info {
-    padding-top: 5%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
 
-    .buttons {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 30px;
+    .introduction {
+      overflow: hidden;
 
-      a {
-        flex: 1;
-        animation: appear_fade 1s;
-        visibility: hidden;
-        animation-fill-mode: forwards;
+      .name {
+        font-size: 65px;
+        font-weight: $header-weight;
+        margin-left: -2px;
       }
 
-      @for $i from 1 through 2 {
-        a:nth-child(#{$i}) {
-          animation-delay: 0.8 + $i * 0.2s;
-        }
+      .role {
+        font-size: 30px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        animation: appear_slide 1.3s;
       }
     }
 
-    .about {
-      max-width: 400px;
-      margin-right: 30px;
+    .info {
+      margin: 5vh 0;
+      display: flex;
+      justify-content: space-between;
 
-      .text {
-        margin-bottom: 20px;
-        overflow: hidden;
-
-        .about_me {
-          font-size: 24px;
-          margin: 0;
-          animation: appear_slide 1.8s;
-        }
-      }
-
-      .links {
+      .buttons {
         display: flex;
-        font-size: 16px;
-        gap: 20px;
-
-        a {
-          text-decoration: none;
-          color: $color-dark;
-          margin: 0;
-          animation: appear_fade 1.3s;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 15px;
+        
+        a { 
+          height: 35px;
+          width: 150px;
+          font-size: 15px;
           visibility: hidden;
+          animation: appear_fade 1s;
           animation-fill-mode: forwards;
-          position: relative;
         }
 
         @for $i from 1 through 2 {
           a:nth-child(#{$i}) {
-            animation-delay: $i * 0.3s;
+            animation-delay: 0.8 + $i * 0.2s;
+          }
+        }
+      }
+
+      .about {
+        width: 250px;
+        padding-right: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .text {
+          overflow: hidden;
+
+          .about_me {
+            font-size: 12px;
+            margin: 0;
+            font-weight: 200;
+            animation: appear_slide 1.8s;
           }
         }
 
-        a::after {
-          content: '';
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          height: 1px;
-          width: 100%;
-          background: $color-dark;
-          transform-origin: left;
-          transform: scale(0,1);
-          transition: 0.3s all;
-        }
+        .links {
+          a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: $color-dark;
+            font-size: 10px;
+            visibility: hidden;
+            animation: appear_fade 1.3s;
+            animation-fill-mode: forwards;
+            position: relative;
+          }
 
-        a:hover::after {
-          transform: scale(1,1);
+          @for $i from 1 through 2 {
+            a:nth-child(#{$i}) {
+              animation-delay: $i * 0.3s;
+            }
+          }
+
+          a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background: $color-dark;
+            transform-origin: left;
+            transform: scale(0,1);
+            transition: 0.3s all;
+          }
+  
+          a:hover::after {
+            transform: scale(1,1);
+          }
+
         }
       }
     }
   }
-}
 
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 5px;
-  width: 100%;
-  background: $color-dark;
-  transform-origin: 0% 100%;
-  animation: bar_expand 2s;
-}
-
-
-.scroll_container {
-  height: 15vh;
-  padding: 20px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  .scroll {
-    display: inline-block;
-    margin: 0;
-    position: relative;
-    writing-mode: vertical-rl;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    opacity: 0;
-    animation: show_scroll 1s;
-    animation-fill-mode: forwards;
-    animation-delay: 3s;
-  }
-
-  .scroll::after {
+  .hero::after {
     position: absolute;
     content: '';
+    height: 5px;
+    width: 100%;
     background: $color-dark;
-    height: 100%;
-    width: 1px;
-    opacity: 0.5;
-    top: 0;
-    right: 15px;
-    transform-origin: top;
-    animation: underline_scroll 6s infinite ease-in-out;
-    animation-delay: 3s;
+    bottom: 0;
+    transform-origin: 0% 100%;
+    animation: bar_expand 2s;
+  }
+
+  /* ------------ SCROLL ------------ */
+
+  .scroll_container {
+    height: 15vh;
+    padding: 0 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .scroll {
+      position: relative;
+      margin: 0;
+      writing-mode: vertical-rl;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 6px; 
+      opacity: 0;
+      animation: show_scroll 1s;
+      animation-fill-mode: forwards;
+      animation-delay: 3s;
+    }
+
+    .scroll::after {
+      position: absolute;
+      content: '';
+      background: $color-dark;
+      height: 100%;
+      width: 1px;
+      top: 0;
+      left: -2px;
+      opacity: 0.5;
+      transform-origin: top;
+      animation: underline_scroll 6s infinite ease-in-out;
+      animation-delay: 3s;
+    }
   }
 }
 
