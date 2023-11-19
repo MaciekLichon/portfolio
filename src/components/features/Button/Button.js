@@ -1,8 +1,8 @@
-import styles from './Button.module.scss';
+import './Button.scss';
 
 const Button = props => {
   return (
-    <a className={styles.button} href={props.url} target={props.option}>
+    <a className="button" href={props.url} target={props.option} rel="noreferrer noopener">
       {props.children}
     </a>
   );

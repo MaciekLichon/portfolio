@@ -17,11 +17,11 @@ const Hero = () => {
           </div>
           <div className={styles.about}>
             <div className={styles.text}>
-              <p className={styles.about_me}>Nine months long web development bootcamp graduate with over three years of corporate experience in analytical roles.</p>
+              <p className={styles.about_me}>I specialize in HTML, CSS, JavaScript, React, and TypeScript, crafting engaging user interfaces and web experiences that meet today's industry standards.</p>
             </div>
             <div className={styles.links}>
-              <a href="https://www.linkedin.com/in/maciej-lichon/" target="_blank">LinkedIn</a>
-              <a href="https://github.com/MaciekLichon" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/maciej-lichon/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+              <a href="https://github.com/MaciekLichon" target="_blank" rel="noreferrer noopener">GitHub</a>
             </div>
           </div>
         </div>

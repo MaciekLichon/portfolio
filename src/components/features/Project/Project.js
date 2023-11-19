@@ -1,6 +1,4 @@
-import styles from './Project.module.scss';
-
-import clsx from 'clsx';
+import './Project.scss';
 import { useRef, useEffect, useState } from 'react';
 
 const Project = props => {
@@ -32,35 +30,35 @@ const Project = props => {
 
 
   return (
-    <div key={props.id} className={styles.project_container}>
-      <div className={clsx(styles.project_info, isVisible && styles.show)} ref={elementRef}>
-        <div><h3 className={styles.title}>{props.title}</h3></div>
-        <div><h4 className={styles.technologies}>{props.technologies}</h4></div>
-        <div><p className={styles.description}>{props.description}</p></div>
+    <div className="project">
+      <div className={`project__info ${isVisible ? 'show' : ''}`} ref={elementRef}>
+        <div><h3 className="project__info-title">{props.title}</h3></div>
+        <div><h4 className="project__info-technologies">{props.technologies}</h4></div>
+        <div><p className="project__info-description">{props.description}</p></div>
         <div>
-          <div className={styles.actions}>
-            <div className={styles.action}>
-              <span className={styles.arrow}></span>
-              <a href={props.appLink} target="_blank" className={styles.action_button}>Try it out</a>
+          <div className="project__info-actions">
+            <div className="project__info-action">
+              <span className="project__info-action-arrow"></span>
+              <a href={props.appLink} target="_blank" className="project__info-action-button" rel="noreferrer noopener">Try it out</a>
             </div>
-            <div className={styles.action}>
-              <span className={styles.arrow}></span>
-              <a href={props.gitLink} target="_blank" className={styles.action_button}>Access code</a>
+            <div className="project__info-action">
+              <span className="project__info-action-arrow"></span>
+              <a href={props.gitLink} target="_blank" className="project__info-action-button" rel="noreferrer noopener">Access code</a>
             </div>
           </div>
         </div>
       </div>
-      <div className={styles.project_visuals}>
-        <div className={styles.visuals_container}>
-          <div className={styles.project_preview}>
-            <a href={props.appLink} target="_blank">
+      <div className="project__visuals">
+        <div className="project__visuals-container">
+          <div className="project__visuals-preview">
+            <a href={props.appLink} target="_blank" rel="noreferrer noopener">
               <img
                 alt={props.title}
                 src={`${process.env.PUBLIC_URL}${props.mainImage}`}
               />
             </a>
           </div>
-          <div className={styles.foreground}>
+          <div className="project__visuals-foreground">
             <img
               alt={props.title}
               src={`${process.env.PUBLIC_URL}${props.foregroundOne}`}

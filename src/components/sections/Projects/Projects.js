@@ -1,4 +1,3 @@
-import styles from './Projects.module.scss';
 import { useSelector } from 'react-redux';
 
 import { getAllProjects } from '../../../redux/projectsRedux';
@@ -9,7 +8,7 @@ const Projects = () => {
   const projects = useSelector(getAllProjects);
 
   return (
-    <section className={styles.projects}>
+    <section>
       {projects.map(project => (
         <Project
           key={project.id}

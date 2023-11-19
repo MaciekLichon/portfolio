@@ -1,0 +1,53 @@
+@import '../../../styles/variables.scss';
+
+.footer {
+  background-color: $clr-dark;
+
+  &__marquee {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+
+    @media (min-width: $tablet) {
+      padding: 60px 0;
+    }
+
+    &-message {
+      font-size: 60px;
+      color: $clr-light;
+      font-weight: $fw-bold;
+      margin: 0 100px;
+
+      @media (min-width: $tablet) {
+        font-size: 65px;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 30px 20px;
+    border-top: 1px solid $clr-light;
+    
+    @media (min-width: $tablet) {
+      padding: 40px 20px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &-link {
+      color: $clr-light;
+      font-size: 18px;
+      opacity: 0.5;
+      transition: all 0.4s;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+}

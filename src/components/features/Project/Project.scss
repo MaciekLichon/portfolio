@@ -1,0 +1,296 @@
+@import '../../../styles/variables.scss';
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  position: relative;
+  padding: 70px 0;
+
+  @media (min-width: $tablet) {
+    gap: 50px;
+    flex-direction: row;
+  }
+
+  @media (min-width: $desktop) {
+    padding: 80px 0;
+    gap: 80px;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+  
+  &::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: $clr-dark;
+    opacity: 0.2;
+  }
+
+  &__info {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $desktop) {
+      flex: 3;
+    }
+
+    &-title {
+      font-size: 50px;
+      font-weight: 500;
+
+      @media (min-width: $mobile) {
+        font-size: 70px;
+      }
+
+      @media (min-width: $tablet) {
+        font-size: 80px;
+      }
+    }
+
+    &-technologies {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin: 5px 0 10px 0;
+      font-weight: 400;
+
+      @media (min-width: $mobile) {
+        font-size: 18px;
+      }
+
+      @media (min-width: $tablet) {
+        font-size: 16px;
+      }
+
+      @media (min-width: $desktop) {
+        font-size: 18px;
+      }
+    }
+
+    &-description {
+      font-size: 16px;
+      font-weight: 200;
+
+      @media (min-width: $mobile) {
+        font-size: 18px;
+      }
+
+      @media (min-width: $tablet) {
+        font-size: 20px;
+      }
+
+      @media (min-width: $desktop) {
+        font-size: 22px;
+      }
+    }
+
+    &-actions {
+      margin-top: 10px;
+    }
+
+    &-action {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      &:hover &-arrow {
+        width: 30px;
+        transform: scaleX(1);
+      }
+  
+      &:hover &-button {
+        opacity: 0.7;
+      }
+
+      &-arrow {
+        content: '';
+        width: 0px;
+        height: 1px;
+        background: $clr-dark;
+        opacity: 0.4;
+        margin-right: 5px;
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: all 1s;
+      }
+
+      &-button {
+        color: $clr-dark;
+        text-decoration: none;
+        font-size: 14px;
+        text-transform: uppercase;
+        opacity: 0.4;
+        display: block;
+        font-weight: 300;
+        margin-left: -4px;
+        transition: all 0.5s;
+
+        @media (min-width: $tablet) {
+          font-size: 16px;
+        }
+      }
+    }
+
+    &-title, &-technologies, &-description, &-actions {
+      position: relative;
+      display: inline-block;
+      visibility: hidden;
+    }
+
+    &.show {
+      .project__info-title, 
+      .project__info-technologies, 
+      .project__info-description, 
+      .project__info-actions {
+        animation: showText 0.8s;
+        animation-fill-mode: forwards;
+      }
+  
+      @keyframes showText {
+        0%, 49% {
+          visibility: hidden;
+        }
+        50%, 100% {
+          visibility: visible;
+        }
+      }
+  
+      .project__info-title::after, 
+      .project__info-technologies::after, 
+      .project__info-description::after, 
+      .project__info-actions::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 102%;
+        background: $clr-dark;
+        transform-origin: left;
+        visibility: hidden;
+        animation: unfold_text_mask 0.8s;
+        transition-timing-function: cubic-bezier(0.75, 0, 0.25, 1);
+      }
+  
+      @keyframes unfold_text_mask {
+        0% {
+          visibility: visible;
+          transform: scaleX(0);
+        }
+        40% {
+          transform: scaleX(1);
+        }
+        49% {
+          transform-origin: left;
+        }
+        50% {
+          transform-origin: right;
+        }
+        60% {
+          transform: scaleX(1);
+        }
+        100% {
+          transform: scaleX(0);
+          transform-origin: right;
+        }
+      }
+    }
+
+  }
+
+  &__visuals {
+    position: relative;
+    height: 400px;
+    flex: 5;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      width: 100%;
+      background: $clr-dark;
+      height: 10px;
+      opacity: 0.4;
+      border-radius: 10px;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    &-container {
+      border: 5px solid black;
+      border-radius: 20px;
+      background: grey;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+    }
+
+    &-preview {
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+        object-fit: cover;
+        object-position: top;
+        
+        transform-origin: top;
+        transform: scale(1.1);
+        
+        @media (min-width: $tablet) {
+          transform-origin: center;
+          transform: none;
+        }
+      }
+
+      &:hover img {
+        // transform: scale(1.1);
+        transform: scale(1.2);
+      }
+    }
+
+    &-foreground {
+      display: none;
+      position: absolute;
+      left: -13%;
+      bottom: -12%;
+      height: 250px;
+
+      @media (min-width: $tablet) {
+        display: block;
+      }
+
+      @media (min-width: $desktop) {
+        height: 250px;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 15%;
+        bottom: 20px;
+        width: 55%;
+        background: $clr-dark;
+        height: 12px;
+        opacity: 0.3;
+        border-radius: 10px;
+        filter: blur(8px);
+        z-index: -1;
+      }
+
+      img {
+        height: 100%;
+        position: relative;
+      }
+    }
+  }
+}
