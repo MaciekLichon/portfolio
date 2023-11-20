@@ -4,14 +4,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   gap: 40px;
   position: relative;
   padding: 70px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+  &:first-child {
+    padding-top: 0;
+    border: 0;
+  }
 
   @media (min-width: $tablet) {
     gap: 50px;
     flex-direction: row;
+    align-items: stretch;
   }
 
   @media (min-width: $desktop) {
@@ -19,24 +25,16 @@
     gap: 80px;
   }
 
-  &:first-child {
-    padding-top: 0;
-  }
-  
-  &::after {
-    position: absolute;
-    bottom: 0;
-    content: '';
-    width: 100%;
-    height: 1px;
-    background: $clr-dark;
-    opacity: 0.2;
-  }
 
   &__info {
-    flex: 2;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    align-self: center;
+
+    @media (min-width: $tablet) {
+      flex: 2;
+    }
 
     @media (min-width: $desktop) {
       flex: 3;
@@ -44,7 +42,8 @@
 
     &-title {
       font-size: 50px;
-      font-weight: 500;
+      font-weight: $fw-black;
+      margin-bottom: 5px;
 
       @media (min-width: $mobile) {
         font-size: 70px;
@@ -58,8 +57,8 @@
     &-technologies {
       font-size: 14px;
       text-transform: uppercase;
-      margin: 5px 0 10px 0;
-      font-weight: 400;
+      margin-bottom: 20px;
+      font-weight: $fw-bold;
 
       @media (min-width: $mobile) {
         font-size: 18px;
@@ -76,7 +75,8 @@
 
     &-description {
       font-size: 16px;
-      font-weight: 200;
+      font-weight: $fw-medium;
+      margin-bottom: 20px;
 
       @media (min-width: $mobile) {
         font-size: 18px;
@@ -89,10 +89,6 @@
       @media (min-width: $desktop) {
         font-size: 22px;
       }
-    }
-
-    &-actions {
-      margin-top: 10px;
     }
 
     &-action {
@@ -115,7 +111,6 @@
         height: 1px;
         background: $clr-dark;
         opacity: 0.4;
-        margin-right: 5px;
         transform-origin: left;
         transform: scaleX(0);
         transition: all 1s;
@@ -123,13 +118,10 @@
 
       &-button {
         color: $clr-dark;
-        text-decoration: none;
         font-size: 14px;
         text-transform: uppercase;
         opacity: 0.4;
-        display: block;
-        font-weight: 300;
-        margin-left: -4px;
+        font-weight: $fw-semibold;
         transition: all 0.5s;
 
         @media (min-width: $tablet) {
@@ -140,7 +132,6 @@
 
     &-title, &-technologies, &-description, &-actions {
       position: relative;
-      display: inline-block;
       visibility: hidden;
     }
 
@@ -207,8 +198,16 @@
 
   &__visuals {
     position: relative;
-    height: 400px;
-    flex: 5;
+    aspect-ratio: 1.6 / 1;
+
+    @media (min-width: $tablet) {
+      aspect-ratio: auto;
+      flex: 3;
+    }
+
+    @media (min-width: $desktop) {
+      flex: 5;
+    }
 
     &::after {
       content: '';
@@ -253,7 +252,6 @@
       }
 
       &:hover img {
-        // transform: scale(1.1);
         transform: scale(1.2);
       }
     }

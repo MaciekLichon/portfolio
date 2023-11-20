@@ -32,19 +32,17 @@ const Project = props => {
   return (
     <div className="project">
       <div className={`project__info ${isVisible ? 'show' : ''}`} ref={elementRef}>
-        <div><h3 className="project__info-title">{props.title}</h3></div>
-        <div><h4 className="project__info-technologies">{props.technologies}</h4></div>
-        <div><p className="project__info-description">{props.description}</p></div>
-        <div>
-          <div className="project__info-actions">
-            <div className="project__info-action">
-              <span className="project__info-action-arrow"></span>
-              <a href={props.appLink} target="_blank" className="project__info-action-button" rel="noreferrer noopener">Try it out</a>
-            </div>
-            <div className="project__info-action">
-              <span className="project__info-action-arrow"></span>
-              <a href={props.gitLink} target="_blank" className="project__info-action-button" rel="noreferrer noopener">Access code</a>
-            </div>
+        <h3 className="project__info-title">{props.title}</h3>
+        <h4 className="project__info-technologies">{props.technologies}</h4>
+        <p className="project__info-description">{props.description}</p>
+        <div className="project__info-actions">
+          <div className="project__info-action">
+            <span className="project__info-action-arrow"></span>
+            <a href={props.appLink} target="_blank" className="project__info-action-button" rel="noreferrer noopener">Try it out</a>
+          </div>
+          <div className="project__info-action">
+            <span className="project__info-action-arrow"></span>
+            <a href={props.gitLink} target="_blank" className="project__info-action-button" rel="noreferrer noopener">Access code</a>
           </div>
         </div>
       </div>

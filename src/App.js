@@ -1,15 +1,15 @@
 import Container from './components/features/Container/Container';
 
-import Hero from './components/sections/Hero/Hero';
 import Projects from './components/sections/Projects/Projects';
 import Footer from './components/sections/Footer/Footer';
+import NewHero from './components/sections/NewHero/NewHero';
 
 
 const App = () => {
   return (
     <>
       <Container>
-        <Hero />
+        <NewHero />
         <Projects />
       </Container>
       <Footer />
