@@ -16,7 +16,7 @@ const NewHero = () => {
                     </div>
                     <div className="content__details-text">
                         <div className="content__details-text__about">
-                            <p>I specialize in <span>HTML, CSS, JavaScript, React and TypeScript,</span> crafting engaging user interfaces and web experiences that meet today's industry standards.</p>
+                            <p>I specialize in <span>React, TypeScript, JavaScript, HTML and CSS,</span> crafting engaging user interfaces and web experiences that meet today's industry standards.</p>
                         </div>
                         <div className="content__details-text__links">
                             <a href="https://www.linkedin.com/in/maciej-lichon/" target="_blank" rel="noreferrer noopener" className="content__details-text__links-item">LinkedIn</a>
